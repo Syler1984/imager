@@ -1,0 +1,2 @@
+# Imager
+PyQt image manager.
