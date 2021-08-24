@@ -14,4 +14,3 @@ class MainWindow(QMainWindow):
         uic.loadUi(ui_path, self)
 
         self.show()
-

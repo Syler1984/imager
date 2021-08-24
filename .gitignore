@@ -1,6 +1,9 @@
 # Project specific
 .idea
 *.iml
+*.pyc
+*.pyo
+__pycache__
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,python,qt,intellij
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,python,qt,intellij
