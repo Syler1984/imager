@@ -8,5 +8,6 @@ namespace imager.bin
 {
     internal class TagEditor
     {
+        string a;
     }
 }
