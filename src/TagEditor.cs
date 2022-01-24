@@ -8,6 +8,6 @@ namespace imager.bin
 {
     internal class TagEditor
     {
-        string a;
+        string a;//очень важная переменная
     }
 }
