@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:imager"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.ColumnSpan="2" Fill="LightBlue"/>
+        <Rectangle Grid.RowSpan="2" Fill="DimGray"/>
+        <Rectangle Fill="LightGray"/>
+        <GridSplitter Grid.RowSpan="2" Width="5" HorizontalAlignment="Right"/>
     </Grid>
 </Window>
