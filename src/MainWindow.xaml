@@ -4,20 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:imager"
+        xmlns:viewmodels="clr-namespace:imager.ViewModels"
+        xmlns:views="clr-namespace:imager.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <DataTemplate x:Name="browserViewTemplate" DataType="{x:Type viewmodels:BrowserViewModel}">
+            <views:BrowserControl DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="settingsViewTemplate" DataType="{x:Type viewmodels:SettingsViewModel}">
+            <views:SettingsControl DataContext="{Binding}"/>
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
-            <RowDefinition/>
+            <RowDefinition Height="20" />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Rectangle Grid.ColumnSpan="2" Fill="LightBlue"/>
-        <Rectangle Grid.RowSpan="2" Fill="DimGray"/>
-        <Rectangle Fill="LightGray"/>
-        <GridSplitter Grid.RowSpan="2" Width="5" HorizontalAlignment="Right"/>
+        
+        <DockPanel Grid.Column="1" Background="IndianRed" />
+
+        <DockPanel Grid.Row="1" Background="BlueViolet">
+            <StackPanel>
+                <Button Content="Browser" Click="BrowserBtn_Clicked" />
+                <Button Content="Settings" Click="SettingsBtn_Clicked" />
+            </StackPanel>
+        </DockPanel>
+
+        <ContentControl Content="{Binding}" Grid.Row="1" Grid.Column="1" />
+
+        <Rectangle Fill="LightGray" />
+        
+        <GridSplitter Grid.RowSpan="2" Width="5" HorizontalAlignment="Right" />
     </Grid>
 </Window>

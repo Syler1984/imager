@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using imager.ViewModels;
 
 namespace imager
 {
@@ -23,6 +24,21 @@ namespace imager
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BrowserBtn_(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BrowserBtn_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new BrowserViewModel();
+        }
+
+        private void SettingsBtn_Clicked(object sender, RoutedEventArgs e)
+        {
+            DataContext = new SettingsViewModel();
         }
     }
 }
